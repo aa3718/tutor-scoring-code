@@ -5,14 +5,20 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "tutor")
+@Table(name = "question")
 @Entity
-public class Tutor {
+public class Question {
 
 	@Id
 	@Column(name = "id", unique = true, nullable = false, updatable = false)
-	String id;
+	String questionId;
+	@Column(name = "question_value")
+	String questionValue;
+	@Column(name = "question_type")
+	QuestionType questionType;
 
-	@Column(name = "score")
-	double score;
+	enum QuestionType {
+		SINGLE_CHOICE,
+		MULTIPLE_CHOICE
+	}
 }

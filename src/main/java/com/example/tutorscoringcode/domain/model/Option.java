@@ -5,14 +5,19 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table(name = "tutor")
+import org.springframework.context.annotation.Primary;
+
+@Table(name = "option")
 @Entity
-public class Tutor {
+public class Option {
 
 	@Id
 	@Column(name = "id", unique = true, nullable = false, updatable = false)
-	String id;
+	String optionId;
 
-	@Column(name = "score")
-	double score;
+	@Column(name = "question_id")
+	String questionId;
+
+	@Column(name = "option_value")
+	String optionValue;
 }

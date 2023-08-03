@@ -1,18 +1,20 @@
 package com.example.tutorscoringcode.domain.model;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Table(name = "tutor")
-@Entity
-public class Tutor {
+public class TutorAnswer {
 
 	@Id
 	@Column(name = "id", unique = true, nullable = false, updatable = false)
-	String id;
+	String tutorAnswerId;
 
-	@Column(name = "score")
-	double score;
+	@Column(name = "tutor_id")
+	String tutorId;
+
+	@Column(name = "question_id")
+	String questionId;
+
+	@Column(name = "option_id")
+	String optionId;
 }
